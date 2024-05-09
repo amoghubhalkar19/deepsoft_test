@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WatchCo - Modern Timepieces</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #34495e;
+            --secondary-color: #f1c40f;
+            --text-color: #333;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+        }
+        a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+        a:hover {
+            color: var(--secondary-color);
+        }
+        ul {
+            list-style: none;
+        }
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .clearfix:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .clearfix {
+            zoom: 1;
+        }
+        .header {
+            background-color: var(--secondary-color);
+            padding: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            float: left;
+        }
+        .header nav {
+            float: right;
+        }
+        .header nav ul {
+            display: flex;
+            align-items: center;
+        }
+        .header nav ul li {
+            margin-right: 20px;
+        }
+        .header nav ul li a {
+            color: var(--text-color);
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .header nav ul li a:hover {
+            background-color: var(--primary-color);
+        }
+        .hero {
+            height: 100vh;
+            background-image: url('watch.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--text-color);
+            font-size: 2rem;
+        }
+        .hero h1 {
+            margin: 0;
+        }
+        .hero button {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .hero button:hover {
+            background-color: #e0e0e0;
+        }
+        .features {
+            padding: 60px 0;
+            text-align: center;
+        }
+        .features h2 {
+            margin-bottom: 30px;
+        }
+        .features ul {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .features li {
+            width: calc(33.33% - 20px);
+            margin-bottom: 30px;
+            text-align: left;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .features li h3 {
+            margin: 0;
+            color: var(--text-color);
+        }
+        .features li p {
+            margin: 0;
+            line-height: 1.6;
+        }
+        .pricing {
+            padding: 60px 0;
+            text-align: center;
+        }
+        .pricing h2 {
+            margin-bottom: 30px;
+        }
+        .pricing ul {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            list-style: none;
+        }
+        .pricing li {
+            width: calc(33.33% - 20px);
+            text-align: left;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .pricing li h3 {
+            margin: 0;
+            color: var(--text-color);
+        }
+        .pricing li p {
+            margin: 0;
+            line-height: 1.6;
+        }
+        .pricing li:hover {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+        .banner {
+            background-color: var(--secondary-color);
+            padding: 30px;
+            text-align: center;
+            color: var(--text-color);
+        }
+        .banner h2 {
+            margin: 0;
+        }
+        .faq {
+            padding: 60px 0;
+            text-align: center;
+        }
+        .faq h2 {
+            margin-bottom: 30px;
+        }
+        .faq ul {
+            list-style: none;
+            padding: 0;
+        }
+        .faq li {
+            margin-bottom: 20px;
+        }
+        .faq li:before {
+            content: "\f0d7";
+            font-size: 1.5rem;
+            color: var(--text-color);
+            margin-right: 10px;
+            line-height: 1;
+        }
+        .faq li p {
+            margin: 0;
+            line-height: 1.6;
+        }
+        .footer {
+            background-color: #34495e;
+            padding: 30px;
+            text-align: center;
+            color: var(--text-color);
+        }
+        .footer ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .footer li {
+            margin-bottom: 10px;
+        }
+        .footer li a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer li a:hover {
+            color: var(--secondary-color);
+        }
+        .social-media {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .social-media a {
+            color: var(--text-color);
+            margin: 0 5px;
+            transition: color 0.3s ease;
+        }
+        .social-media a:hover {
+            color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container clearfix">
+        <header class="header">
+            <h1>WatchCo</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="hero">
+            <h1>Discover Our Modern Timepieces</h1>
+            <button>Shop Now</button>
+        </section>
+        <section class="features">
+            <h2>Key Features</h2>
+            <ul>
+                <li>
+                    <h3>Sleek Design</h3>
+                    <p>Our watches are designed to make a statement.</p>
+                </li>
+                <li>
+                    <h3>Durable Materials</h3>
+                    <p>We use only the highest quality materials to ensure long-lasting durability.</p>
+                </li>
+                <li>
+                    <h3>Customizable</h3>
+                    <p>Choose from a variety of strap colors and face designs to create your perfect watch.</p>
+                </li>
+            </ul>
+        </section>
+        <section class="pricing">
+            <h2>Choose Your Watch</h2>
+            <ul>
+                <li>
+                    <h3>Classic</h3>
+                    <p>$199</p>
+                </li>
+                <li>
+                    <h3>Premium</h3>
+                    <p>$299</p>
+                </li>
+                <li>
+                    <h3>Elite</h3>
+                    <p>$399</p>
+                </li>
+            </ul>
+        </section>
+        <section class="banner">
+            <h2>Limited Time Offer!</h2>
+            <p>Get 20% off your first purchase with code WELCOME20</p>
+        </section>
+        <section class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <ul>
+                <li>
+                    <i class="fas fa-question"></i>
+                    <p>
+                        <button>What materials are your watches made of?</button>
+                        Our watches are made of high-quality stainless steel and scratch-resistant glass.
+                    </p>
+                </li>
+                <li>
+                    <i class="fas fa-question"></i>
+                    <p>
+                        <button>Can I customize my watch?</button>
+                        Yes, you can choose from a variety of strap colors and face designs to create your perfect watch.
+                    </p>
+                </li>
+                <li>
+                    <i class="fas fa-question"></i>
+                    <p>
+                        <button>What is your return policy?</button>
+                        We offer a 30-day money-back guarantee on all purchases.
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <footer class="footer">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+            <div class="social-media">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
